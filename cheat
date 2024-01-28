@@ -1,0 +1,49 @@
+# Provides the correct solution to two exercises of Week 3
+def cheat(exercise):
+    if exercise == "question_5":
+        print("""Code for exercise five
+          def my_plots(string_here):
+            if string_here == "eww":
+                plt.scatter(pingus['island'], pingus['bill_length_mm'])
+                plt.title('plot x')
+                #plt.xlabel('')
+                #plt.ylabel('Arbitrary Units')
+                #plt.legend(['Group A', 'Group B', 'Data Points', 'Experimental Data'], loc='upper right')
+                plt.grid(color='gray', linestyle='--', linewidth=0.5)
+                plt.show()
+            elif string_here == "yay":
+                sns.scatterplot(data=pingus, x='body_mass_g', y='bill_length_mm', hue='island')
+                plt.title('Correlation of Body Mass and Bill Length in Penguins ')
+                plt.xlabel('Body Mass (g)')
+                plt.ylabel('Bill Length (mm)')
+                plt.legend(title='Island',
+                           loc = 'upper right')
+                #plt.grid(color='gray', linestyle='--', linewidth=0.5)
+                plt.show()
+            else:
+                print("Please use either 'eww' or 'yay'")")""")
+    elif exercise == "question_4":
+        print("""Answer for question 4 
+            diamonds = sns.load_dataset("diamonds")
+                fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+                plt.figure()
+                # Create a heatmap of the correlations in the diamonds data set
+                diamond_map1 = sns.heatmap(diamonds[['carat', 'depth', 'table', 'price', 'x', 'y', 'z']].corr(),
+                                           annot=True,
+                                           cmap="crest",
+                                           ax=axes[0])
+                axes[0].set_title('Correlation Heatmap') # too long lines
+                # Create a kdeplot of the carat and price in the diamonds dataset.
+                diamond_kdeplot = sns.kdeplot(data=diamonds,
+                                              x='carat',
+                                              y='price',
+                                              cmap="viridis",
+                                              fill=True,
+                                              ax=axes[1])
+                axes[1].set_title('KDE Plot (carat vs price)')
+                plt.tight_layout()
+                plt.show()""")
+    else:
+        print("Sorry, no answer for this yet:(((")
+        
+        
